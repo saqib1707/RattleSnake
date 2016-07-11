@@ -1,0 +1,5 @@
+JSON -javascript object notation
+#JSON >> json(for future use)
+
+Basically used for storing data and interchanging them.
+data can be read and used by any programming lanuage(that's why it 's too handy).
