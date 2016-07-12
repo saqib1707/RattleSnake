@@ -1,0 +1,26 @@
+[
+    {
+        "stu_phoneno": "8976546789", 
+        "stu_password": "786", 
+        "stu_name": "dilkash", 
+        "stu_marks": "67", 
+        "stu_username": "dilu", 
+        "stu_batch": 1
+    }, 
+    {
+        "stu_phoneno": "8765432109", 
+        "stu_password": "", 
+        "stu_name": "samrin", 
+        "stu_marks": "56", 
+        "stu_username": "", 
+        "stu_batch": 1
+    }, 
+    {
+        "stu_phoneno": "8828290924", 
+        "stu_password": "", 
+        "stu_name": "saqib azim", 
+        "stu_marks": "45", 
+        "stu_username": "", 
+        "stu_batch": 1
+    }
+]

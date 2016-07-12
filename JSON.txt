@@ -1,5 +1,21 @@
 JSON -javascript object notation
-#JSON >> json(for future use)
+#JSON >> json(reference for future use)
 
 Basically used for storing data and interchanging them.
-data can be read and used by any programming lanuage(that's why it 's too handy).
+data can be read,parsed  and used by any programming lanuage(that's why it 's too handy).
+
+Example Code: three array of data stored
+{students:[
+	{"firstname":"Saqib" ,"lastname":"Azim"},
+	{"firstname":"Pranav" ,"lastname":"sankhe"},
+	{"firstname":"Prakhar" ,"lastname":"Jain"}
+]}
+
+json evaluated to javascript object.Basically it's a kind of key:value pair.
+json format is syntactically identical to the code for creating javascript objects.
+The JSON syntax is a subset of the JavaScript syntax.
+
+Using json:
+	Fetch the json string
+	JSON.parse the string.
+	

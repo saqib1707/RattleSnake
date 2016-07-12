@@ -1,0 +1,17 @@
+[
+    {
+        "stu_name": "dilkash", 
+        "stu_marks": "67", 
+        "stu_batch_alloted": 1
+    }, 
+    {
+        "stu_name": "samrin", 
+        "stu_marks": "56", 
+        "stu_batch_alloted": 1
+    }, 
+    {
+        "stu_name": "saqib azim", 
+        "stu_marks": "45", 
+        "stu_batch_alloted": 1
+    }
+]
