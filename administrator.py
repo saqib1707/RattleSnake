@@ -1,6 +1,7 @@
 import json
 import coaching_temp
 import os
+import Error
 
 class Administrator:
 	def __init__(self):
@@ -32,7 +33,7 @@ class Administrator:
 		count=0
 		i=1
 		listObj=[]
-		print "In remapping of administrator"
+		print "In ReMapping of students"
 		with open('C:\Users\Saqib\Desktop\Snake\Records.txt','r') as readFile:
 			jsonFile=json.load(readFile)
 			jsonFileSorted=sorted(jsonFile,key=lambda k:k['stu_marks'],reverse=True)
@@ -52,13 +53,25 @@ class Administrator:
 		os.system('C:\Users\Saqib\Desktop\Snake\MarkSheet.txt')
 
 
-
 def AdmInterface(choice):
 	AdmObj=Administrator()
 	if choice==2:
-		#upload marks for all the students
-		AdmObj.uploadMarks()
+		AdmObj.uploadMarks()    #upload marks for all the students
 	elif choice==3:
-		AdmObj.reMapping()
+		AdmObj.reMapping()       #Shuffle students and allot them batches
+
+while(True):
+	print "Press 1 to Access the Coaching Students Database"	
+	print "Press 2 to Upload the New MarkSheet of the latest Test"
+	print "Press 3 to shuffle the Students based on their marks"
+	print "Press 0 to exit"
+	choicefour=input(">>>")
+	if choicefour==1:
+		coaching_temp.accessStuData()
+	elif choicefour==2 or choicefour==3:
+		AdmInterface(choicefour)
+	elif choicefour==0:
+		break
 	else:
-		print "Wrong Input"
+		Error.showError()
+

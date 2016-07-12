@@ -1,6 +1,5 @@
 import json
 import os
-listobj=[]
 
 class RattleSnake:
     def __init__(self):
@@ -10,6 +9,13 @@ class RattleSnake:
         self.batch=None
         self.username=""
         self.password=""
+
+    def checkFileEmpty(self):
+        if os.stat("C:\Users\Saqib\Desktop\Snake\Records.txt").st_size == 0:
+            print "Empty File!!!Please add members to perform these operations"
+            return True
+        else:
+            return False
         
     def addStudent(self):
         listobj=[]
@@ -42,88 +48,85 @@ class RattleSnake:
                     continue
             if count==1 or count==3:
                 myModifiedList+=']'
-            file.close()
         with open('C:\Users\Saqib\Desktop\Snake\Records.txt','w') as file:
             file.write(myModifiedList)
-        jsonfile=json.load(open("C:\Users\Saqib\Desktop\Snake\Records.txt"))
-        open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonfile,indent=4))
+        jsonData=json.load(open("C:\Users\Saqib\Desktop\Snake\Records.txt"))
+        open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonData,indent=4))
 
 
     def removeStudent(self):
         with open('C:\Users\Saqib\Desktop\Snake\Records.txt') as infile:
-            jsonfile=json.load(infile)
-            if jsonfile==[]:
-                print "Students Database Empty"
-                infile.close()
-                return
-            nooftimes=input("How many student data u want to delete >>> ")
-            for i in range(nooftimes):
-                found=False
-                #jsonfile=json.load(open("C:\Users\Saqib\Desktop\Snake\Records.txt"))
-                if jsonfile==[]:
-                    print "Student Database already empty!!!No more members to delete"
-                    break
-                self.nameToRemove=raw_input("Enter student name to be removed from Database >>> ")
-                for i in range(len(jsonfile)):
-                    if jsonfile[i]["stu_name"]==self.nameToRemove :
-                        jsonfile.pop(i)
-                        print "%s deleted from database "%self.nameToRemove
-                        found=True
+            if self.checkFileEmpty()==False:
+                jsonfile=json.load(infile)
+                nooftimes=input("How many student data u want to delete >>> ")
+                for i in range(nooftimes):
+                    found=False
+                    #jsonfile=json.load(open("C:\Users\Saqib\Desktop\Snake\Records.txt"))
+                    if jsonfile==[]:
+                        print "Student Database already empty!!!No more members to delete"
                         break
-                if found==False:
-                    print "\n%s not in the DataBase\n" %self.nameToRemove
-                open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonfile,indent=4))
+                    self.nameToRemove=raw_input("Enter student name to be removed from Database >>> ")
+                    for i in range(len(jsonfile)):
+                        if jsonfile[i]["stu_name"]==self.nameToRemove :
+                            jsonfile.pop(i)
+                            print "%s deleted from Database "%self.nameToRemove
+                            found=True
+                            break
+                    if found==False:
+                        print "\n%s not in the DataBase\n" %self.nameToRemove
+                    open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonfile,indent=4))
 
 
     def printListOfStudents(self):
+        listObj=[]
         with open('C:\Users\Saqib\Desktop\Snake\Records.txt') as infile:
-            data=json.load(infile)
-            if data==[]:
-                print "Students Database Empty"
-            else:
-                print "\n",data
-                os.system('C:\Users\Saqib\Desktop\Snake\Records.txt')
-            infile.close()
+            if self.checkFileEmpty()==False:
+                data=json.load(infile)
+                for i in range(len(data)):
+                    dictionary={"stu_name":data[i]['stu_name'],"stu_phoneno":data[i]['stu_phoneno'],"stu_marks":data[i]['stu_marks'],"stu_batch":data[i]['stu_batch']}
+                    listObj.append(dictionary)
+                with open('C:\Users\Saqib\Desktop\Snake\Info.txt','w') as readFile:
+                    json.dump(listObj,readFile,indent=4)
+                os.system('C:\Users\Saqib\Desktop\Snake\Info.txt')     
+        infile.close()
 
     def modifyData(self):
         with open('C:\Users\Saqib\Desktop\Snake\Records.txt') as infile:
-            jsonfile=json.load(infile)
-            if jsonfile==[]:
-                print "Students Database Empty"
-                infile.close()
-                return
-            self.dataToModify=raw_input("Enter student name whose data has to be modified >>> ")
-            modification=True
-            for i in range(len(jsonfile)):
-                if jsonfile[i]["stu_name"]==self.dataToModify :
-                    print "Press 1 to modify Student Name"
-                    print "Press 2 to modify Student phone_no"
-                    print "Press 3 to modify Student marks"
-                    print "Press 4 to modify Student batch"
-                    modify_choice=input("Enter ur choice >>> ")
-                    if modify_choice==1:
-                        self.stu_name=raw_input("Enter Modified Name:")
-                        jsonfile[i]["stu_name"]=self.stu_name
-                    elif modify_choice==2:
-                        self.stu_phoneno=raw_input("Enter Modified Phone no:")
-                        jsonfile[i]["stu_phone"]=self.stu_phoneno
-                    elif modify_choice==3:
-                        self.stu_marks=raw_input("Enter Modified marks :")
-                        jsonfile[i]["stu_marks"]=self.stu_marks
-                    elif modify_choice==4:
-                        self.stu_batch=raw_input("Enter new batch:")
-                        jsonfile[i]["stu_batch"]=self.stu_batch
-                    else:
-                        print "Wrong choice"
-                        modification=False
+            if self.checkFileEmpty()==False:
+                jsonData=json.load(infile)
+                self.dataToModify=raw_input("Enter student name whose data has to be modified >>> ")
+                modification=True
+                for i in range(len(jsonData)):
+                    if jsonData[i]["stu_name"]==self.dataToModify :
+                        print "Press 1 to modify Student Name"
+                        print "Press 2 to modify Student phone_no"
+                        print "Press 3 to modify Student marks"
+                        print "Press 4 to modify Student batch"
+                        modify_choice=input("Enter ur choice >>> ")
+                        if modify_choice==1:
+                            jsonfile[i]["stu_name"]=raw_input("Enter Modified Name:")
+                            
+                        elif modify_choice==2:
+                            jsonfile[i]["stu_phone"]=raw_input("Enter Modified Phone no:")
+                           
+                        elif modify_choice==3:
+                            jsonfile[i]["stu_marks"]=raw_input("Enter Modified marks :")
+                            
+                        elif modify_choice==4:
+                            jsonfile[i]["stu_batch"]=raw_input("Enter new batch:")
+                           
+                        else:
+                            print "Wrong choice"
+                            modification=False
 
-                    if modification==True:
-                        print "Data Modified for %s"%self.dataToModify 
-                    open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonfile,indent=4))
+                        if modification==True:
+                            print "Data Modified for %s"%self.dataToModify 
+                        open("C:\Users\Saqib\Desktop\Snake\Records.txt",'w').write(json.dumps(jsonfile,indent=4))
         infile.close()
 
+    
 
-# Main Interface
+# Interface to access data of coaching students
 def accessStuData():
     while(True):
         print "Press 1 to Add Students to the Database"
@@ -131,7 +134,6 @@ def accessStuData():
         print "Press 3 to Print all the students in the Database"
         print "Press 4 to modify the data of students"
         print "Press any other key to go back to the previous menu"
-        print "\n"
             
         obj=RattleSnake()
         inputchoice=input("Enter ur choice >>> ")
@@ -150,6 +152,5 @@ def accessStuData():
 
         else:
             break
-        print "\n"
     return
     

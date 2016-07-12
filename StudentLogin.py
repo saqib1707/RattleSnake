@@ -1,26 +1,5 @@
 import json
 import getpass
-"""
-from Tkinter import *
-
-top=Tk()
-def login():
-	username=Entry(top,cursor="arrow",text="User Name",fg="blue")
-	username.pack()
-	pwd=Entry(top,text="Password",fg="blue",show="*")
-	pwd.pack()
-	top.mainloop()
-
-	
-def signUp():
-	username=Entry(top,cursor="arrow",text="User Name",fg="blue")
-	username.pack()
-	pwd=Entry(top,text="Password",fg="blue",show="*")
-	pwd.pack()
-	confirmpwd=Entry(top,text="Confirm Password",cursor="arrow",fg="blue")
-	confirmpwd.pack()
-	top.mainloop()
-"""
 
 def login():
 	found=False
@@ -35,9 +14,9 @@ def login():
         	if jsonData[i]['stu_username']==username and jsonData[i]['stu_password']==pwd:
         		#show his username,marks ,rank and current batch
         		found=True
-        		print jsonData[i]['stu_name'],"\nMarks:",jsonData[i]['stu_marks'],"\tBatch:",jsonData[i]['stu_batch']
+        		print "\n",jsonData[i]['stu_name'],"\nMarks:",jsonData[i]['stu_marks'],"\tBatch:",jsonData[i]['stu_batch'],"\n"
         if found==False:
-        	print "\nNot registered or not admitted yet\n"
+        	print "\nNot registered or not admitted yet!!!If Registered ,then Sign Up!!!\n"
 
 #for the first time users.
 def signUp():
@@ -56,15 +35,26 @@ def signUp():
 				print "Password don't match!!!"
 			else:
 				#Register the student username and password
-				print "Registration complete"
+				print "\nRegistration complete\n"
 				jsonData[i]['stu_username']=username
 				jsonData[i]['stu_password']=pwd
 				open('C:\Users\Saqib\Desktop\Snake\Records.txt','w').write(json.dumps(jsonData,indent=4))
 			break
 	if found==False:
-		print "Not admitted yet or data filled incorrectly"
-	
-
+		print "\nNot admitted yet or data filled incorrectly\n"
+while(True):	
+	print "Press 1 to Login to view Results"
+	print "Press 2 to Sign Up for the first time"
+	print "Press 0 to exit"
+	choicethree=input(">>> ")
+	if choicethree==1:
+		login()
+	elif choicethree==2:
+		signUp()
+	elif choicethree==0:
+		break
+	else:
+		Error.showError()
 
 
 	

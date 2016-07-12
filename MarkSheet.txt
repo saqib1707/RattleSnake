@@ -1,17 +1,32 @@
 [
     {
-        "stu_name": "dilkash", 
-        "stu_marks": "67", 
+        "stu_name": "saqib", 
+        "stu_marks": "98", 
         "stu_batch_alloted": 1
     }, 
     {
         "stu_name": "samrin", 
-        "stu_marks": "56", 
+        "stu_marks": "95", 
         "stu_batch_alloted": 1
     }, 
     {
-        "stu_name": "saqib azim", 
-        "stu_marks": "45", 
+        "stu_name": "naushin", 
+        "stu_marks": "67", 
         "stu_batch_alloted": 1
+    }, 
+    {
+        "stu_name": "naurin", 
+        "stu_marks": "45", 
+        "stu_batch_alloted": 2
+    }, 
+    {
+        "stu_name": "dilkash", 
+        "stu_marks": "45", 
+        "stu_batch_alloted": 2
+    }, 
+    {
+        "stu_name": "amreen", 
+        "stu_marks": "32", 
+        "stu_batch_alloted": 2
     }
 ]
