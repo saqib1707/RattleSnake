@@ -1,22 +1,27 @@
 [
     {
-        "stu_name": "saqib", 
-        "stu_marks": "98", 
-        "stu_batch_alloted": 1
-    }, 
-    {
-        "stu_name": "samrin", 
-        "stu_marks": "95", 
+        "stu_name": "sahas", 
+        "stu_marks": "92", 
         "stu_batch_alloted": 1
     }, 
     {
         "stu_name": "naushin", 
-        "stu_marks": "67", 
+        "stu_marks": "90", 
         "stu_batch_alloted": 1
     }, 
     {
-        "stu_name": "naurin", 
-        "stu_marks": "45", 
+        "stu_name": "saqib", 
+        "stu_marks": "78", 
+        "stu_batch_alloted": 1
+    }, 
+    {
+        "stu_name": "amreen", 
+        "stu_marks": "67", 
+        "stu_batch_alloted": 2
+    }, 
+    {
+        "stu_name": "jetha", 
+        "stu_marks": "60", 
         "stu_batch_alloted": 2
     }, 
     {
@@ -25,8 +30,28 @@
         "stu_batch_alloted": 2
     }, 
     {
-        "stu_name": "amreen", 
-        "stu_marks": "32", 
+        "stu_name": "samrin", 
+        "stu_marks": "43", 
         "stu_batch_alloted": 2
+    }, 
+    {
+        "stu_name": "deepesh", 
+        "stu_marks": "34", 
+        "stu_batch_alloted": 3
+    }, 
+    {
+        "stu_name": "dishani", 
+        "stu_marks": "23", 
+        "stu_batch_alloted": 3
+    }, 
+    {
+        "stu_name": "naurin", 
+        "stu_marks": "21", 
+        "stu_batch_alloted": 3
+    }, 
+    {
+        "stu_name": "dhiraj", 
+        "stu_marks": "20", 
+        "stu_batch_alloted": 3
     }
 ]

@@ -7,9 +7,10 @@ class Administrator:
 	def __init__(self):
 		#print "In init of administrator"
 		print ""
+		print ""
 
 	def uploadMarks(self):
-		#print "In upload of administrator"
+		print "Upload of Students' Marks"
 		listObj=[]
 		with open('C:\Users\Saqib\Desktop\Snake\Records.txt') as readFile:
 			jsonFile=json.load(readFile)
@@ -33,7 +34,7 @@ class Administrator:
 		count=0
 		i=1
 		listObj=[]
-		print "In ReMapping of students"
+		print "ReMapping of students"
 		with open('C:\Users\Saqib\Desktop\Snake\Records.txt','r') as readFile:
 			jsonFile=json.load(readFile)
 			jsonFileSorted=sorted(jsonFile,key=lambda k:k['stu_marks'],reverse=True)

@@ -1,43 +1,67 @@
 [
     {
-        "stu_name": "dishani", 
-        "stu_phoneno": "11", 
-        "stu_marks": "76", 
-        "stu_batch": 1
-    }, 
-    {
         "stu_name": "saqib", 
         "stu_phoneno": "10", 
-        "stu_marks": "45", 
+        "stu_marks": "98", 
         "stu_batch": 1
     }, 
     {
         "stu_name": "samrin", 
         "stu_phoneno": "12", 
-        "stu_marks": 0, 
-        "stu_batch": null
-    }, 
-    {
-        "stu_name": "naurin", 
-        "stu_phoneno": "13", 
-        "stu_marks": 0, 
-        "stu_batch": null
-    }, 
-    {
-        "stu_name": "amreen", 
-        "stu_phoneno": "14", 
-        "stu_marks": 0, 
-        "stu_batch": null
+        "stu_marks": "95", 
+        "stu_batch": 1
     }, 
     {
         "stu_name": "naushin", 
         "stu_phoneno": "15", 
-        "stu_marks": 0, 
-        "stu_batch": null
+        "stu_marks": "67", 
+        "stu_batch": 1
+    }, 
+    {
+        "stu_name": "naurin", 
+        "stu_phoneno": "13", 
+        "stu_marks": "45", 
+        "stu_batch": 2
     }, 
     {
         "stu_name": "dilkash", 
         "stu_phoneno": "16", 
+        "stu_marks": "45", 
+        "stu_batch": 2
+    }, 
+    {
+        "stu_name": "amreen", 
+        "stu_phoneno": "14", 
+        "stu_marks": "32", 
+        "stu_batch": 2
+    }, 
+    {
+        "stu_name": "dishani", 
+        "stu_phoneno": "17", 
+        "stu_marks": 0, 
+        "stu_batch": null
+    }, 
+    {
+        "stu_name": "jetha", 
+        "stu_phoneno": "17", 
+        "stu_marks": 0, 
+        "stu_batch": null
+    }, 
+    {
+        "stu_name": "dhiraj", 
+        "stu_phoneno": "18", 
+        "stu_marks": 0, 
+        "stu_batch": null
+    }, 
+    {
+        "stu_name": "deepesh", 
+        "stu_phoneno": "19", 
+        "stu_marks": 0, 
+        "stu_batch": null
+    }, 
+    {
+        "stu_name": "sahas", 
+        "stu_phoneno": "20", 
         "stu_marks": 0, 
         "stu_batch": null
     }
