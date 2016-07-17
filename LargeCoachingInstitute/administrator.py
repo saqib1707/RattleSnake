@@ -5,7 +5,6 @@ import Error
 
 class Administrator:
 	def __init__(self):
-		#print "In init of administrator"
 		print
 
 	def startNewTest(self):
@@ -18,6 +17,7 @@ class Administrator:
 					jsonData[i]['is_Marks_Updated']="False"
 			if flag==False:
 				print "New Test could not be started now.Reminders to teachers who have not submitted marksheet"
+				os.system("pause")
 				return
 		print "Start a new Test"
 		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt') as readTeacherFile:
@@ -34,6 +34,7 @@ class Administrator:
 			for i in range(len(jsonData)):
 				if jsonData[i]['is_Marks_Updated']!="True":
 					print "All students marks has not be uploaded!! ReMapping could not be done now"
+					os.system("pause")
 					return
 		print "ReMapping of students"
 		i=1
@@ -65,7 +66,7 @@ def AdmInterface(choice):
 		AdmObj.reMapping()       #Shuffle students and allot them batches
 
 while(True):
-	print "Press 1 to Access the Coaching Students Database"	
+	print "\nPress 1 to Access the Coaching Students Database"	
 	print "Press 2 to start a new test(give reminders to teachers)"
 	print "Press 3 for Batch Allotment"
 	print "Press 0 to exit"

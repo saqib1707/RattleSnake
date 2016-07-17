@@ -1,98 +1,98 @@
 [
     {
-        "username": "saqib1707", 
-        "name": "saqib azim", 
-        "batch": 1, 
-        "marks": 97, 
-        "password": "codemaxx", 
-        "phoneno": "7823"
-    }, 
-    {
-        "username": "", 
-        "name": "naushin ghazala", 
-        "batch": 1, 
-        "marks": 90, 
-        "password": "", 
-        "phoneno": "7236"
-    }, 
-    {
-        "username": "", 
-        "name": "dilkash ghazala", 
-        "batch": 1, 
-        "marks": 79, 
-        "password": "", 
-        "phoneno": "7202"
-    }, 
-    {
-        "username": "", 
-        "name": "naurin haider", 
-        "batch": 1, 
-        "marks": 78, 
-        "password": "", 
-        "phoneno": "7290"
-    }, 
-    {
-        "username": "", 
-        "name": "osaid imam", 
-        "batch": 2, 
-        "marks": 76, 
-        "password": "", 
-        "phoneno": "7201"
-    }, 
-    {
         "username": "", 
         "name": "amrin haider", 
-        "batch": 2, 
-        "marks": 67, 
+        "batch": 1, 
+        "marks": 98, 
         "password": "", 
         "phoneno": "3198"
     }, 
     {
         "username": "", 
-        "name": "dishani dey", 
-        "batch": 2, 
-        "marks": 64, 
+        "name": "zaid imam", 
+        "batch": 1, 
+        "marks": 91, 
         "password": "", 
+        "phoneno": "8320"
+    }, 
+    {
+        "username": "", 
+        "name": "osaid imam", 
+        "batch": 1, 
+        "marks": 90, 
+        "password": "", 
+        "phoneno": "7201"
+    }, 
+    {
+        "username": "dishani1707", 
+        "name": "dishani dey", 
+        "batch": 1, 
+        "marks": 90, 
+        "password": "1707", 
         "phoneno": "9247"
+    }, 
+    {
+        "username": "", 
+        "name": "naushin ghazala", 
+        "batch": 2, 
+        "marks": 87, 
+        "password": "", 
+        "phoneno": "7236"
+    }, 
+    {
+        "username": "", 
+        "name": "samrin haider", 
+        "batch": 2, 
+        "marks": 82, 
+        "password": "", 
+        "phoneno": "3159"
     }, 
     {
         "username": "", 
         "name": "kashish", 
         "batch": 2, 
-        "marks": 57, 
+        "marks": 78, 
         "password": "", 
         "phoneno": "4270"
     }, 
     {
         "username": "", 
         "name": "shadab azim", 
-        "batch": 3, 
-        "marks": 56, 
+        "batch": 2, 
+        "marks": 67, 
         "password": "", 
         "phoneno": "3601"
     }, 
     {
         "username": "", 
-        "name": "samrin haider", 
+        "name": "dilkash ghazala", 
         "batch": 3, 
-        "marks": 45, 
+        "marks": 65, 
         "password": "", 
-        "phoneno": "3159"
-    }, 
-    {
-        "username": "", 
-        "name": "zaid imam", 
-        "batch": 3, 
-        "marks": 42, 
-        "password": "", 
-        "phoneno": "8320"
+        "phoneno": "7202"
     }, 
     {
         "username": "", 
         "name": "sayan akhtar", 
         "batch": 3, 
-        "marks": 21, 
+        "marks": 52, 
         "password": "", 
         "phoneno": "8730"
+    }, 
+    {
+        "username": "", 
+        "name": "naurin haider", 
+        "batch": 3, 
+        "marks": 45, 
+        "password": "", 
+        "phoneno": "7290"
+    }, 
+    {
+        "username": "", 
+        "name": "srijit dutta", 
+        "batch": 3, 
+        "marks": 23, 
+        "password": "", 
+        "phoneno": "757"
     }
 ]

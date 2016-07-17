@@ -1,4 +1,4 @@
-import json,Error,getpass
+import json,Error,getpass,os
 
 class TeacherInterface:
 	def __init__(self):
@@ -13,9 +13,6 @@ class TeacherInterface:
 			print "Batch is empty"
 			return True
 
-        
-
-
 	def showListOfStudents(self,batch):
 		if self.checkBatchEmpty(batch)==True:
 			return
@@ -27,25 +24,24 @@ class TeacherInterface:
 					#listOfStudent.append(jsonData2[i]['name'])
 					print jsonData2[i]['name']," : ",jsonData2[i]['marks']
 			
-
 	def uploadMarks(self,batch):
 		if self.checkBatchEmpty(batch)==True:
 			return
-		print "Upload of Student Marks of Last Test"
-		print "Enter Marks for students"
+		print "Upload Student Marks for the Latest Test"
 		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
 			jsonData2=json.load(readStudentFile)
 			for i in range(len(jsonData2)):
 				if jsonData2[i]['batch']==batch:
 					jsonData2[i]['marks']=input(jsonData2[i]['name'])
 			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
+			print "Marks Uploaded Successfully"
+			os.system("pause")
 		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt') as readTeacherFile:
 			jsonData1=json.load(readTeacherFile)
 			for i in range(len(jsonData1)):
 				if jsonData1[i]['batch']==batch:
 					jsonData1[i]['is_Marks_Updated']="True"
 			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt','w').write(json.dumps(jsonData1,indent=4))
-
 
 	def modifyMarks(self,batch):
 		if self.checkBatchEmpty(batch)==True:
@@ -59,11 +55,12 @@ class TeacherInterface:
 				if jsonData2[i]['name']==name and jsonData2[i]['batch']==batch:
 					jsonData2[i]['marks']=input('Enter modified marks >>> ')
 					is_Modified=True
+					print "Marks Modified for %s"%name
+					os.system("pause")
 					break
 			if is_Modified==False:
 				print "Modification Failure!!!Student not found"
 			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
-
 
 def main():
 	batch=None
@@ -74,7 +71,7 @@ def main():
 		for i in range(len(jsonData1)):
 			if jsonData1[i]['username']==username and jsonData1[i]['password']==pwd :
 				batch=jsonData1[i]['batch']
-				print jsonData1[i]['name']," -Batch ",batch,"\n","Access Granted"
+				print "\n",jsonData1[i]['name']," -Batch ",batch,"\n","Access Granted"
 				if jsonData1[i]['is_Marks_Updated']=="False":
 					print "Reminder to upload the latest test marks"
 				break
@@ -83,10 +80,10 @@ def main():
 			print "Username or password or both are incorrect!!!Please try again"
 			return
 	while True:
-		print "1. See the list of students in ur batch"
+		print "\n1. See the list of students in ur batch"
 		print "2. Upload marks of the Latest Test"
 		print "3. Modify marks of individual student"
-		print "4. Quit"
+		print "0. Quit"
 		choice=input(">>>")
 		obj=TeacherInterface()
 		if choice==1:
@@ -98,7 +95,7 @@ def main():
 		elif choice==3:
 			obj.modifyMarks(batch)
 
-		elif choice==4:
+		elif choice==0:
 			break
 
 		else:

@@ -64,7 +64,6 @@ class RattleSnake:
                     continue
             if count==1 or count==3:
                 myModifiedList+=']'
-        
         with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w') as file:
             file.write(myModifiedList)
         jsonData=json.load(open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt"))
@@ -92,6 +91,7 @@ class RattleSnake:
                 if found==False:
                     print "\n%s not in the DataBase\n" %self.nameToRemove
                 open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData1,indent=4))
+                os.system("pause")
 
 
     def showListOfStudents(self):
@@ -111,13 +111,13 @@ class RattleSnake:
         with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as infile:
             if self.checkFileEmpty()==False:
                 jsonData=json.load(infile)
-                self.dataToModify=raw_input("Enter student name whose data has to be modified >>> ")
+                self.dataToModify=raw_input("\nEnter student name whose data has to be modified >>> ")
                 modification=True
                 for i in range(len(jsonData)):
                     if jsonData[i]["name"]==self.dataToModify :
                         print "Press 1 to modify Student Name"
                         print "Press 2 to modify Student phone_no"
-                        modify_choice=input("Enter ur choice >>> ")
+                        modify_choice=input(">>> ")
                         if modify_choice==1:
                             jsonData[i]["name"]=raw_input("Enter Modified Name:")
                             
@@ -132,20 +132,22 @@ class RattleSnake:
                             print "Data Modified for %s"%self.dataToModify 
                         open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt",'w').write(json.dumps(jsonData,indent=4))
         infile.close()
+        os.system("pause")
+
 
     
 
 # Interface to access data of coaching students
 def accessStuData():
     while(True):
-        print "Press 1 to Add Students to the Database"
+        print "\nPress 1 to Add Students to the Database"
         print "Press 2 to Remove students from the Database"
         print "Press 3 to Print all the students in the Database"
         print "Press 4 to modify the basic info of students"
-        print "Press any other key to go back to the previous menu"
+        print "Press 0 to go back to the previous menu"
             
         obj=RattleSnake()
-        inputchoice=input("Enter ur choice >>> ")
+        inputchoice=input(">>> ")
 
         if inputchoice==1:
             obj.addStudent()

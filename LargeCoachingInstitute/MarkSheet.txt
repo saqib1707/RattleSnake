@@ -1,62 +1,62 @@
 [
     {
-        "marks": 97, 
+        "marks": 98, 
         "batch": 1, 
-        "name": "saqib azim"
+        "name": "amrin haider"
+    }, 
+    {
+        "marks": 91, 
+        "batch": 1, 
+        "name": "zaid imam"
     }, 
     {
         "marks": 90, 
         "batch": 1, 
-        "name": "naushin ghazala"
-    }, 
-    {
-        "marks": 79, 
-        "batch": 1, 
-        "name": "dilkash ghazala"
-    }, 
-    {
-        "marks": 78, 
-        "batch": 1, 
-        "name": "naurin haider"
-    }, 
-    {
-        "marks": 76, 
-        "batch": 2, 
         "name": "osaid imam"
     }, 
     {
-        "marks": 67, 
-        "batch": 2, 
-        "name": "amrin haider"
-    }, 
-    {
-        "marks": 64, 
-        "batch": 2, 
+        "marks": 90, 
+        "batch": 1, 
         "name": "dishani dey"
     }, 
     {
-        "marks": 57, 
+        "marks": 87, 
+        "batch": 2, 
+        "name": "naushin ghazala"
+    }, 
+    {
+        "marks": 82, 
+        "batch": 2, 
+        "name": "samrin haider"
+    }, 
+    {
+        "marks": 78, 
         "batch": 2, 
         "name": "kashish"
     }, 
     {
-        "marks": 56, 
-        "batch": 3, 
+        "marks": 67, 
+        "batch": 2, 
         "name": "shadab azim"
+    }, 
+    {
+        "marks": 65, 
+        "batch": 3, 
+        "name": "dilkash ghazala"
+    }, 
+    {
+        "marks": 52, 
+        "batch": 3, 
+        "name": "sayan akhtar"
     }, 
     {
         "marks": 45, 
         "batch": 3, 
-        "name": "samrin haider"
+        "name": "naurin haider"
     }, 
     {
-        "marks": 42, 
+        "marks": 23, 
         "batch": 3, 
-        "name": "zaid imam"
-    }, 
-    {
-        "marks": 21, 
-        "batch": 3, 
-        "name": "sayan akhtar"
+        "name": "srijit dutta"
     }
 ]

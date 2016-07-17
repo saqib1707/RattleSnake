@@ -1,23 +1,23 @@
 [
     {
         "username": "ranveeraggarwal", 
-        "is_Marks_Updated": "None", 
         "password": "rattlesnake", 
         "batch": 1, 
-        "name": "Ranveer Aggarwal"
+        "name": "Ranveer Aggarwal", 
+        "is_Marks_Updated": "None"
     }, 
     {
         "username": "nihalsingh", 
-        "is_Marks_Updated": "None", 
         "password": "coder", 
         "batch": 2, 
-        "name": "Nihal Singh"
+        "name": "Nihal Singh", 
+        "is_Marks_Updated": "None"
     }, 
     {
         "username": "meetudeshi", 
-        "is_Marks_Updated": "None", 
         "password": "1209", 
         "batch": 3, 
-        "name": "Meet Udeshi"
+        "name": "Meet Udeshi", 
+        "is_Marks_Updated": "None"
     }
 ]
