@@ -4,7 +4,7 @@ import os
 
 #to check whether the StudentRecords file is completely empty or not
 def checkFileEmpty():
-        if os.stat("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt").st_size == 0:
+        if os.stat("StudentRecords.txt").st_size == 0:
             print "Empty File!!!Please add members to perform these operations"
             return True
         else:
@@ -16,7 +16,7 @@ def login():
 		return
 	username=raw_input("User Name >>>")
 	pwd=getpass.getpass("Password >>>")
-	with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readFile:
+	with open('StudentRecords.txt') as readFile:
 		jsonData=json.load(readFile)
         for i in range(len(jsonData)):
         	if jsonData[i]['username']==username and jsonData[i]['password']==pwd:
@@ -34,7 +34,7 @@ def signUp():
 		return
 	name=raw_input("Name >>>")
 	phoneno=raw_input("Phone No >>>")	
-	with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+	with open('StudentRecords.txt') as readStudentFile:
 		jsonData=json.load(readStudentFile)
 		for i in range(len(jsonData)):
 			if jsonData[i]['name']==name and jsonData[i]['phoneno']==phoneno and jsonData[i]['username']=="" and jsonData[i]['password']=="":
@@ -53,7 +53,7 @@ def signUp():
 					os.system("pause")
 					jsonData[i]['username']=username
 					jsonData[i]['password']=pwd
-					open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData,indent=4))	
+					open('StudentRecords.txt','w').write(json.dumps(jsonData,indent=4))	
 				break
 		if found==False:
 			print "\nNot admitted yet or data filled incorrectly or already registered\n"

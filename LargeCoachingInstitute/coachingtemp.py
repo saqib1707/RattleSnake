@@ -13,7 +13,7 @@ class RattleSnake:
         self.password=""
 
     def checkFileEmpty(self):
-        if os.stat("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt").st_size == 0:
+        if os.stat("StudentRecords.txt").st_size == 0:
             print "Empty File!!!Please add members to perform these operations"
             return True
         else:
@@ -28,7 +28,7 @@ class RattleSnake:
         #for i in range(noofStudents):
         self.nametoadd=raw_input("\nEnter student name to be added >>> ")
         self.phone_no=raw_input("Enter phone no:")
-        with open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt") as readStudentFile:
+        with open("StudentRecords.txt") as readStudentFile:
             if self.checkFileEmpty()==False:
                 jsonData=json.load(readStudentFile)
                 if len(jsonData) in range(1,4):
@@ -45,9 +45,9 @@ class RattleSnake:
         data= {"name":self.nametoadd,"phoneno":self.phone_no,"marks":self.marks,"batch":self.batch,"username":self.username,"password":self.password}
         listobj.append(data)
         
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','a') as appendStudentFile:
+        with open('StudentRecords.txt','a') as appendStudentFile:
             json.dump(listobj,appendStudentFile)
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+        with open('StudentRecords.txt') as readStudentFile:
             textdata=readStudentFile.read()
             for char in textdata:
                 if count==1:
@@ -64,20 +64,20 @@ class RattleSnake:
                     continue
             if count==1 or count==3:
                 myModifiedList+=']'
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w') as file:
+        with open('StudentRecords.txt','w') as file:
             file.write(myModifiedList)
-        jsonData=json.load(open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt"))
-        open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt",'w').write(json.dumps(jsonData,indent=4))
+        jsonData=json.load(open("StudentRecords.txt"))
+        open("StudentRecords.txt",'w').write(json.dumps(jsonData,indent=4))
 
     def removeStudent(self):
         if self.checkFileEmpty()==True:
             return
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+        with open('StudentRecords.txt') as readStudentFile:
             jsonData1=json.load(readStudentFile)
             nooftimes=input("How many student data u want to delete >>> ")
             for i in range(nooftimes):
                 found=False
-                #jsonfile=json.load(open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt"))
+                #jsonfile=json.load(open("StudentRecords.txt"))
                 if jsonData1==[]:
                     print "Student Database already empty!!!No more members to delete"
                     break
@@ -90,25 +90,25 @@ class RattleSnake:
                         break
                 if found==False:
                     print "\n%s not in the DataBase\n" %self.nameToRemove
-                open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData1,indent=4))
+                open('StudentRecords.txt','w').write(json.dumps(jsonData1,indent=4))
                 os.system("pause")
 
 
     def showListOfStudents(self):
         listObj=[]
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as infile:
+        with open('StudentRecords.txt') as infile:
             if self.checkFileEmpty()==False:
                 data=json.load(infile)
                 for i in range(len(data)):
                     dictionary={"name":data[i]['name'],"phoneno":data[i]['phoneno'],"marks":data[i]['marks'],"batch":data[i]['batch']}
                     listObj.append(dictionary)
-                with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\Info.txt','w') as readFile:
+                with open('Info.txt','w') as readFile:
                     json.dump(listObj,readFile,indent=4)
-                os.system('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\Info.txt')     
+                os.system('Info.txt')     
         infile.close()
 
     def modifyData(self):
-        with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as infile:
+        with open('StudentRecords.txt') as infile:
             if self.checkFileEmpty()==False:
                 jsonData=json.load(infile)
                 self.dataToModify=raw_input("\nEnter student name whose data has to be modified >>> ")
@@ -130,7 +130,7 @@ class RattleSnake:
 
                         if modification==True:
                             print "Data Modified for %s"%self.dataToModify 
-                        open("C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt",'w').write(json.dumps(jsonData,indent=4))
+                        open("StudentRecords.txt",'w').write(json.dumps(jsonData,indent=4))
         infile.close()
         os.system("pause")
 

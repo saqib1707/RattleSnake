@@ -5,7 +5,7 @@ class TeacherInterface:
 		print
 
 	def checkBatchEmpty(self,batch):
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+		with open('StudentRecords.txt') as readStudentFile:
 			jsonData2=json.load(readStudentFile)
 			for i in range(len(jsonData2)):
 				if jsonData2[i]['batch']==batch:
@@ -17,7 +17,7 @@ class TeacherInterface:
 		if self.checkBatchEmpty(batch)==True:
 			return
 		listOfStudent=[]
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+		with open('StudentRecords.txt') as readStudentFile:
 			jsonData2=json.load(readStudentFile)
 			for i in range(len(jsonData2)):
 				if jsonData2[i]['batch']==batch:
@@ -28,20 +28,20 @@ class TeacherInterface:
 		if self.checkBatchEmpty(batch)==True:
 			return
 		print "Upload Student Marks for the Latest Test"
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+		with open('StudentRecords.txt') as readStudentFile:
 			jsonData2=json.load(readStudentFile)
 			for i in range(len(jsonData2)):
 				if jsonData2[i]['batch']==batch:
 					jsonData2[i]['marks']=input(jsonData2[i]['name'])
-			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
+			open('StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
 			print "Marks Uploaded Successfully"
 			os.system("pause")
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt') as readTeacherFile:
+		with open('TeacherRecords.txt') as readTeacherFile:
 			jsonData1=json.load(readTeacherFile)
 			for i in range(len(jsonData1)):
 				if jsonData1[i]['batch']==batch:
 					jsonData1[i]['is_Marks_Updated']="True"
-			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt','w').write(json.dumps(jsonData1,indent=4))
+			open('TeacherRecords.txt','w').write(json.dumps(jsonData1,indent=4))
 
 	def modifyMarks(self,batch):
 		if self.checkBatchEmpty(batch)==True:
@@ -49,7 +49,7 @@ class TeacherInterface:
 		is_Modified=False
 		print "Enter student name whose marks has to be modified"
 		name=raw_input(">>>")
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt') as readStudentFile:
+		with open('StudentRecords.txt') as readStudentFile:
 			jsonData2=json.load(readStudentFile)
 			for i  in range(len(jsonData2)):
 				if jsonData2[i]['name']==name and jsonData2[i]['batch']==batch:
@@ -60,13 +60,13 @@ class TeacherInterface:
 					break
 			if is_Modified==False:
 				print "Modification Failure!!!Student not found"
-			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
+			open('StudentRecords.txt','w').write(json.dumps(jsonData2,indent=4))
 
 def main():
 	batch=None
 	username=raw_input("Username >>>")
 	pwd=getpass.getpass("Password >>>")
-	with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt') as readTeacherFile:
+	with open('TeacherRecords.txt') as readTeacherFile:
 		jsonData1=json.load(readTeacherFile)
 		for i in range(len(jsonData1)):
 			if jsonData1[i]['username']==username and jsonData1[i]['password']==pwd :

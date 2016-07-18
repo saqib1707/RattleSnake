@@ -9,7 +9,7 @@ class Administrator:
 
 	def startNewTest(self):
 		flag=True
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt','r') as readTeacherFile:
+		with open('TeacherRecords.txt','r') as readTeacherFile:
 			jsonData=json.load(readTeacherFile)
 			for i in range(len(jsonData)):
 				if jsonData[i]['is_Marks_Updated']=="None":
@@ -20,16 +20,16 @@ class Administrator:
 				os.system("pause")
 				return
 		print "Start a new Test"
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt') as readTeacherFile:
+		with open('TeacherRecords.txt') as readTeacherFile:
 			jsonData=json.load(readTeacherFile)
 			for i in range(len(jsonData)):
 					jsonData[i]['is_Marks_Updated']="None"
-			open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt','w').write(json.dumps(jsonData,indent=4))
+			open('TeacherRecords.txt','w').write(json.dumps(jsonData,indent=4))
 
 	def reMapping(self):
 		count=0
 		listObj=[]
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\TeacherRecords.txt','r') as readTeacherFile:
+		with open('TeacherRecords.txt','r') as readTeacherFile:
 			jsonData=json.load(readTeacherFile)
 			for i in range(len(jsonData)):
 				if jsonData[i]['is_Marks_Updated']!="True":
@@ -38,7 +38,7 @@ class Administrator:
 					return
 		print "ReMapping of students"
 		i=1
-		with open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','r') as readStudentFile:
+		with open('StudentRecords.txt','r') as readStudentFile:
 			jsonData=json.load(readStudentFile)
 			jsonDataSorted=sorted(jsonData,key=lambda k:k['marks'],reverse=True)
 			for j in range(len(jsonDataSorted)):
@@ -47,15 +47,15 @@ class Administrator:
 					i+=1
 					count+=1
 				jsonDataSorted[j]['batch']=i
-		open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\StudentRecords.txt','w').write(json.dumps(jsonDataSorted,indent=4))
+		open('StudentRecords.txt','w').write(json.dumps(jsonDataSorted,indent=4))
 		#showing the shuffled data
 		for i in range(len(jsonDataSorted)):
 			datadict={'name':jsonDataSorted[i]['name'],'marks':jsonDataSorted[i]['marks'],"batch":jsonDataSorted[i]['batch']}
 			listObj.append(datadict)
-		json.dump(listObj,open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\MarkSheet.txt','w'))
-		jsonDataSorted=json.load(open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\MarkSheet.txt'))
-		open('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\MarkSheet.txt','w').write(json.dumps(jsonDataSorted,indent=4))
-		os.system('C:\Users\Saqib\Desktop\Snake\LargeCoachingInstitute\MarkSheet.txt')
+		json.dump(listObj,open('MarkSheet.txt','w'))
+		jsonDataSorted=json.load(open('MarkSheet.txt'))
+		open('MarkSheet.txt','w').write(json.dumps(jsonDataSorted,indent=4))
+		os.system('MarkSheet.txt')
 
 
 def AdmInterface(choice):
